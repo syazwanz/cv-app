@@ -1,11 +1,11 @@
-<div class="flex flex-col items-center gap-2 my-2">
-    <h1 class="text-4xl font-medium">{{profileData.name}}</h1>
-    <div class="flex gap-2">
+<div class="flex flex-col md:items-center gap-2 my-2">
+    <h1 class="text-3xl md:text-4xl font-medium mb-2 md:mb-0">{{profileData.name}}</h1>
+    <div class="flex gap-1 text-sm md:text-base md:gap-2 flex-col md:flex-row mb-2 md:mb-0">
         <p>{{profileData.phone}}</p>
-        <p>·</p>
+        <p class="hidden md:block">·</p>
         <p>{{profileData.email}}</p>
-        <p>·</p>
+        <p class="hidden md:block">·</p>
         <p>{{profileData.url}}</p>
     </div>
-    <p>{{profileData.location}}</p>
+    <p class="text-sm md:text-base">{{profileData.location}}</p>
 </div>

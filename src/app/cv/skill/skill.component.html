@@ -1,7 +1,7 @@
-<div class="flex flex-col items-center px-2">
-    <h2 class="text-2xl mb-6">SKILLS</h2>
-    <ul class="self-start list-disc list-inside space-y-2">
-        <li *ngFor="let skill of skillData" class="font-semibold">
+<div class="flex flex-col md:items-center px-2">
+    <h2 class="text-xl md:text-2xl mb-6">SKILLS</h2>
+    <ul class="self-start list-disc ps-[1em] space-y-2">
+        <li *ngFor="let skill of skillData" class="font-semibold text-sm md:text-base text-justify">
             {{ skill.category }}:
             <span class="font-normal">
                 <span *ngFor="let item of skill.list">{{ item }}{{ skill.list[skill.list.length - 1] !== item ? ','
