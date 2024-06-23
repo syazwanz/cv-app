@@ -1,0 +1,15 @@
+<div class="flex flex-col items-center px-2">
+    <h2 class="text-2xl mb-6 uppercase">Courses</h2>
+    <div class="space-y-6 w-full">
+
+        <div *ngFor="let course of courseData">
+            <div class="flex gap-2">
+                <p class="font-semibold">{{ course.name }}</p>
+                <p class="font-semibold">({{ getMonthName(course.start_month) }} {{ course.start_year }} - {{
+                    getMonthName(course.end_month) }} {{
+                    course.end_year }})</p>
+            </div>
+            <p>{{ course.provider }} | {{ course.url }}</p>
+        </div>
+    </div>
+</div>

@@ -2,10 +2,10 @@ import { Component, Input } from '@angular/core';
 import { Profile } from '../../../types';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-intro',
   standalone: true,
-  templateUrl: './profile.component.html',
+  templateUrl: './intro.component.html',
 })
-export class ProfileComponent {
+export class IntroComponent {
   @Input() profileData!: Profile;
 }

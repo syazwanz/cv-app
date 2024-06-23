@@ -1,0 +1,19 @@
+<div class="flex flex-col items-center px-2">
+    <h2 class="text-2xl mb-6 uppercase">Professional Experience</h2>
+    <div class="space-y-10">
+        <div class="self-start w-full" *ngFor="let exp of experienceData; let i = index">
+            <div class="flex justify-between">
+                <p class="font-semibold">{{ exp.company }}, {{exp.location}}</p>
+                <p class="font-semibold">{{ getMonthName(exp.start_month) }} {{ exp.start_year }} -
+                    <ng-container *ngIf="exp.end_month && exp.end_year; else present">
+                        {{ getMonthName(exp.end_month) }} {{ exp.end_year }}
+                    </ng-container>
+                    <ng-template #present>Present</ng-template>
+            </div>
+            <p class="font-medium">{{ exp.title }}</p>
+            <div class="prose max-w-none text-justify prose-ul:ps-[1em] marker:text-black"
+                [innerHTML]="exp.description">
+            </div>
+        </div>
+    </div>
+</div>

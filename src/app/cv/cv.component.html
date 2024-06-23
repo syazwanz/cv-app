@@ -1,80 +1,30 @@
 <main class="p-10 max-w-screen-lg m-auto mb-10">
     <!-- PROFILE -->
 
-    <app-profile />
+    <app-profile [profileData]="profileData" />
 
     <hr class="border-t border-slate-900 my-10">
 
     <!-- INTRODUCTION -->
-    <div class="flex flex-col items-center px-2">
-        <h2 class="text-2xl mb-6 uppercase">{{cvData.introduction.title}}</h2>
-        <p>{{cvData.introduction.summary}}</p>
-    </div>
+    <app-intro [profileData]="profileData" />
 
     <hr class="border-t border-slate-900 my-10">
 
     <!-- SKILLS -->
-    <div class="flex flex-col items-center px-2">
-        <h2 class="text-2xl mb-6">SKILLS</h2>
-        <ul class="self-start list-disc list-inside space-y-2">
-            <li *ngFor="let skill of cvData.skills" class="font-semibold">
-                {{ skill.category }}:
-                <span class="font-normal">
-                    <span *ngFor="let item of skill.list">{{ item }}{{ skill.list[skill.list.length - 1] !== item ? ','
-                        : '' }} </span>
-                </span>
-            </li>
-        </ul>
-    </div>
+    <app-skill [skillData]="skillData" />
 
     <hr class="border-t border-slate-900 my-10">
 
     <!-- EXPERIENCE -->
-    <div class="flex flex-col items-center px-2">
-        <h2 class="text-2xl mb-6 uppercase">Professional Experience</h2>
-        <div class="space-y-10">
-            <div class="self-start w-full" *ngFor="let exp of cvData.experience; let i = index">
-                <div class="flex justify-between">
-                    <p class="font-semibold">{{ exp.company }}, {{exp.location}}</p>
-                    <p class="font-semibold">{{ exp.startDate }} - {{ exp.endDate }}</p>
-                </div>
-                <p class="font-medium">{{ exp.title }}</p>
-
-                <div class="prose max-w-none text-justify prose-ul:ps-[1em] marker:text-black"
-                    [innerHTML]="exp.details"></div>
-            </div>
-        </div>
-    </div>
+    <app-experience [experienceData]="experienceData" />
 
     <hr class="border-t border-slate-900 my-10">
 
     <!-- EDUCATION -->
-    <div class="flex flex-col items-center px-2">
-        <h2 class="text-2xl mb-6 uppercase">Education</h2>
-        <div class="space-y-6 w-full">
-            <div *ngFor="let edu of cvData.education">
-                <div class="flex gap-2">
-                    <p class="font-semibold">{{ edu.institution }}</p>
-                    <p class="font-semibold">({{ edu.startYear }} - {{ edu.endYear }})</p>
-                </div>
-                <p>{{ edu.degree }}</p>
-            </div>
-        </div>
-    </div>
+    <app-education [educationData]="educationData" />
 
     <hr class="border-t border-slate-900 my-10">
 
     <!-- COURSES -->
-    <div class="flex flex-col items-center px-2">
-        <h2 class="text-2xl mb-6 uppercase">Courses</h2>
-        <div class="space-y-6 w-full">
-            <div *ngFor="let course of cvData.courses">
-                <div class="flex gap-2">
-                    <p class="font-semibold">{{ course.name }}</p>
-                    <p class="font-semibold">({{ course.startDate }} - {{ course.endDate }})</p>
-                </div>
-                <p>{{ course.providerName }} | {{ course.providerUrl }}</p>
-            </div>
-        </div>
-    </div>
+    <app-course [courseData]="courseData" />
 </main>
