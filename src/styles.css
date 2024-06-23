@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 .prose ul ul li {
-  list-style-type: circle; /* Use circle bullets for nested lists */
+  list-style-type: circle;
 }
