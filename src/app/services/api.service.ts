@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Options } from '../../types';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class ApiService {
 
   get<T>(url: string, options: Options): Observable<T> {
     return this.httpClient.get(
-      `http://localhost:8080/api${url}`,
+      `${environment.apiUrl}${url}`,
       options
     ) as Observable<T>;
   }
