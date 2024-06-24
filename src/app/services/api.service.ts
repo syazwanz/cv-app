@@ -10,7 +10,7 @@ import { environment } from '../../environments/environment';
 export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
-  get<T>(url: string, options: Options): Observable<T> {
+  get<T>(url: string, options?: Options): Observable<T> {
     return this.httpClient.get(
       `${environment.apiUrl}${url}`,
       options

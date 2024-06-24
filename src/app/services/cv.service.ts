@@ -9,22 +9,22 @@ export class CvService {
   constructor(private apiService: ApiService) {}
 
   getProfile(id: number): Observable<any> {
-    return this.apiService.get(`/cv/profile/${id}`, {});
+    return this.apiService.get(`/cv/profile/${id}`);
   }
 
   getSkill(id: number): Observable<any> {
-    return this.apiService.get(`/cv/skill/${id}`, {});
+    return this.apiService.get(`/cv/skill/${id}`);
   }
 
   getExperience(id: number): Observable<any> {
-    return this.apiService.get(`/cv/experience/${id}`, {});
+    return this.apiService.get(`/cv/experience/${id}`);
   }
 
   getEducation(id: number): Observable<any> {
-    return this.apiService.get(`/cv/education/${id}`, {});
+    return this.apiService.get(`/cv/education/${id}`);
   }
 
   getCourse(id: number): Observable<any> {
-    return this.apiService.get(`/cv/course/${id}`, {});
+    return this.apiService.get(`/cv/course/${id}`);
   }
 }
