@@ -10,7 +10,8 @@
                     getMonthName(course.end_month) }} {{
                     course.end_year }})</p>
             </div>
-            <p class="text-sm md:text-base">{{ course.provider }} | {{ course.url }}</p>
+            <p class="text-sm md:text-base">{{ course.provider }} | <a href="{{course.url}}" target="_blank"
+                    class="hover:underline underline-offset-2">{{ course.url }}</a></p>
         </div>
     </div>
 </div>
